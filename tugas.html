@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <script>
+        class gempa {
+            constructor(lokasi, skala) {
+                this.lokasi = lokasi;
+                this.skala = skala;
+            }
+
+            dampak() {
+                var dg;
+                if (this.skala <= 2) {
+                    dg = "Gempa tidak terasa";
+
+                } else if (this.skala <= 4) {
+                    dg = "Bangunan retak-retak";
+                } else if (this.skala <= 6) {
+                    dg = "Bangunan roboh";
+                } else if (this.skala > 6) {
+                    dg = "Selain bangunan roboh & berpotensi tsunami";
+                } else { }
+
+                return dg;
+
+            }
+            infoGempa() {
+                document.write(<tr>
+                    <td>${this.lokasi}</td>
+                    <td>${this.skala}</td>
+                    <td>${this.dampak()}</td>
+                </tr>);
+
+            }
+        }
+
+        //buat object
+        let g1 = new gempa('Maluku', 1.5);
+        let g2 = new gempa('Yogyakarta', 6.1);
+        let g3 = new gempa('Bali', 5.3);
+        let g4 = new gempa('Bandung', 7.5);
+        let g5 = new gempa('jakarta', 1.9);
+        let g6 = new gempa('NTT', 3.5);
+        let g7 = new gempa('Ternate', 5.9);
+        let g8 = new gempa('sorong', 8.2);
+
+        g1.infoGempa(); g2.infoGempa(); g3.infoGempa(); g4.infoGempa(); g5.infoGempa(); g6.infoGempa(); g7.infoGempa(); g8.infoGempa();
+    </script>
+</body>
+</html>
